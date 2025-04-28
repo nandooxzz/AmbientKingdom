@@ -33,7 +33,6 @@ export default function Home() {
 
   const getPlaylist = async (id: string) => {
     const token = await getAccessToken();
-    // @ts-ignore
     const reqFollows = await fetch(`https://api.spotify.com/v1/playlists/${id}`, { headers: {Authorization: `Bearer ${token}`} }).then(async (res) => { 
       const json = await res.json()
       const {followers} = (json) as {followers: {href: null, total: number}}

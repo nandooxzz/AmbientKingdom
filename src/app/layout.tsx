@@ -5,7 +5,7 @@ import { FaCrown, FaDiscord, FaInstagram, FaSpotify } from "react-icons/fa6";
 import NextTopLoader from "nextjs-toploader"
 
 import "./globals.css";
-import {poppins, leaguespartan, exo} from "@/fonts"
+import {poppins, leaguespartan} from "@/fonts"
 
 export const metadata: Metadata = {
   title: "Ambient Kingdom",
