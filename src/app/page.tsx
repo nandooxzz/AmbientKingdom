@@ -60,7 +60,7 @@ export default function Home() {
         <div className="flex justify-center items-center flex-col text-left heroText">
           <div>
             <h1 className={`text-purple-50 font-bold text-[4.5em] leading-[0.9em] ${leaguespartan.className}`}>We are <br/><span className="text-[1.4em] heroSpan text-purple-000">Ambient<br/>Kingdom.</span></h1><br />
-            <p className={`${poppins.className} text-white`}>Creators, soldiers and manteiners of <span className="heroSpanTag">ambient trap.</span></p>
+            <p className={`${poppins.className} text-white`}>Creators, soldiers and mainteiners of <span className="heroSpanTag">ambient trap.</span></p>
             <h2 className={`text-white ${leaguespartan.className} font-bold text-[1.5em]`}><span className="heroSpanTag">{followers?.total}</span> currently following <Link href={'https://open.spotify.com/playlist/5ggjTZJy8Xslwaotixt82V?si=P7nCsFr6TsaAqwRwtuM8UA'} className="cursor-pointer" target="_blank"><span className="text-white hover: hover:text-purple-800 underline">us.</span></Link></h2>
           </div>
         </div>
