@@ -1,4 +1,3 @@
-import { ScriptProps } from "next/script";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,7 +30,9 @@ export default function RadarHomePage({img,url,artist,title,altText}: RadarProps
             <h1 className={`${leaguespartan.className} uppercase text-center font-bold text-[1.5em] border-b-[1px]`}>Latest Track</h1><br />
             {(()=> {
               if (img?.url) {
-                return <Image src={img?.url} height={300} width={300} alt={`${altText}`} className="rounded-[10px]"/>
+                if (url?.spotify) {
+                  return <Link href={`${url.spotify}`} target="_blank"><Image src={img?.url} height={300} width={300} alt={`${altText}`} className="rounded-[10px]"/></Link>
+                }
               } else {
                 return <Image src={`/ak-logo.jpg`} height={300} width={300} alt={`${altText}`} className="rounded-[10px]"/>
               }

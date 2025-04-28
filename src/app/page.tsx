@@ -1,13 +1,11 @@
 "use client"
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect,useState } from "react";
 import RadarHomePage from "@/components/radarHomePage";
 import {SpotifyTrack} from "@/types";
-import { League_Spartan, Poppins, Exo } from "next/font/google"
 
 import { artistsCollection } from "@/firebase";
-import { DocumentData, Query, getDocs, query } from "firebase/firestore";
+import { DocumentData, getDocs } from "firebase/firestore";
 import ArtistCarousel from "@/components/artistCarousel";
 
 import {leaguespartan, poppins, exo} from "@/fonts"
@@ -35,6 +33,7 @@ export default function Home() {
 
   const getPlaylist = async (id: string) => {
     const token = await getAccessToken();
+    // @ts-ignore
     const reqFollows = await fetch(`https://api.spotify.com/v1/playlists/${id}`, { headers: {Authorization: `Bearer ${token}`} }).then(async (res) => { 
       const json = await res.json()
       const {followers} = (json) as {followers: {href: null, total: number}}
@@ -74,7 +73,7 @@ export default function Home() {
       <section className="w-full p-[100px] text-black flex flex-col justify-center items-center textSect">
         <div className="shadow-md p-[40px] w-[45%] border-black border-[1px] rounded-md text">
           <p className={`${exo.className} font-normal text-[1.1em]`}>We are a community of producers, vanguards of <span className="text-purple-800">ambient trap/rap</span>, subgenre already started by prod. Adrian and ADTurnUp, guided by <span className="text-purple-800">us</span>.
-            You'll also find here <span className="text-purple-800">house, lo-fi, DnB</span> & a lot more...
+            You&apos;ll also find here <span className="text-purple-800">house, lo-fi, DnB</span> & a lot more...
             <br/><br/>
             <Link href={"https://open.spotify.com/user/31unruzqwj6luxxkl7qi6s253c5y?si=554909d9f4aa41ae"} target="_blank"><span className="text-purple-800 hover:underline">Click here</span></Link> to see all of our Spotify playlists.
           </p>

@@ -1,5 +1,5 @@
 import { Carousel, CarouselContent, CarouselNext, CarouselPrevious, CarouselItem  } from "./ui/carousel";
-import { Card, CardContent, CardTitle, CardFooter, CardDescription} from "./ui/card";
+import { Card, CardContent, CardFooter} from "./ui/card";
 import { DocumentData } from "firebase/firestore";
 import { Button } from "./ui/button";
 import Autoplay from "embla-carousel-autoplay"
@@ -10,7 +10,7 @@ import Link from "next/link";
 import { FaSpotify } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa6";
-import {poppins,exo} from "@/fonts"
+import {exo} from "@/fonts"
 
 interface ACProps {
     artists: DocumentData[] | undefined
@@ -35,7 +35,7 @@ export default function ArtistCarousel({artists}: ACProps) {
                                     </CardContent>
                                     <CardFooter className={`flex flex-col ${exo.className}`}>
                                         <h2 className={`font-semibold text-[1.3em]`}>{doc?.name}</h2>
-                                        <p className="italic text-zinc-600 text-[0.85em] text-center">"{doc?.tag}"</p>
+                                        <p className="italic text-zinc-600 text-[0.85em] text-center">&quot;{doc?.tag}&quot;</p>
                                         <div className="mt-3">
                                             <Link href={`${doc?.spotify}`} target="_blank"><Button className="socialsButton"><FaSpotify/></Button></Link>
                                             <Link href={`${doc?.yt}`} target="_blank"><Button className="socialsButton"><FaYoutube/></Button></Link>

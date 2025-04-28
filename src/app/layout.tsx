@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Inter } from 'next/font/google'
-import { League_Spartan, Poppins } from "next/font/google"
 import { FaCrown, FaDiscord, FaInstagram, FaSpotify } from "react-icons/fa6";
 import NextTopLoader from "nextjs-toploader"
 
