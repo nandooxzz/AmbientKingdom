@@ -1,0 +1,29 @@
+/* ANIMATIONS */
+@keyframes herospantag {
+    0% {background-color: #6d22ce;}
+    25% {background-color: #7e22ce;}
+    50% {background-color: #c022ce;}
+    75% {background-color: #7e22ce;}
+    100% {background-color: #6d22ce;;}
+}
+
+@keyframes slideright {
+    0% {left: -10%}
+    100% {left: 0}
+}
+
+@keyframes slideleft {
+    0% {left: 10%}
+    100% {left: 0}
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #18181b;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #8035e2;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+    border-radius: 10px;
+}

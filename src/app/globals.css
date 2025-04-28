@@ -1,0 +1,247 @@
+@import url('./animations.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  transition: all .15s;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.menuLink {
+  margin: 5px;
+}
+
+.menuLink:hover {
+  color: #a855f7;
+}
+
+.hero {
+  background-image: url('../../public/stacked-waves-haikei.svg');
+  background-size: cover;
+  user-select: none;
+}
+
+.heroText{
+  position: relative;
+  animation-name: slideright;
+  animation-duration: 1s;
+}
+
+.heroRadar{
+  animation-name: slideleft;
+  animation-duration: 1s;
+}
+
+.heroSpan {
+  background: -webkit-linear-gradient(#ffffff, #d6aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSpanTag {
+  padding: 4px;
+  border-radius: 5px;
+  animation-name: herospantag;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+img {  
+  /* user-drag: none;   */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.socialsButton { 
+  width: 25px;
+  height: 25px;
+  padding: 20px;
+  margin: 2px;
+  background:none;
+  border: 1px solid black;
+  color: black;
+  border-radius: 100%;
+}
+
+.socialsButton:hover {
+  background-color: black;
+  color: white;
+}
+
+.contactButton { 
+  width: 50px;
+  height: 50px;
+  padding: 25px;
+  margin: 2px;
+  background:none;
+  border: 1px solid black;
+  color: black;
+  border-radius: 100%;
+}
+
+.contactButton:hover {
+  background-color: black;
+  color: white;
+}
+
+/* RESPONSIVE */
+
+/* Tablet to Mobile */
+@media(max-width: 1090px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    padding-top: 55px;
+    padding-bottom: 100px;
+    height: 100%;
+  }
+
+  .heroText {
+    text-align: center;
+    
+  }
+
+  .heroRadar {
+    top: 50px;
+  }
+}
+
+/* Mobile */
+
+@media(max-width: 549px) {
+  .menu {
+    font-size: .9em;
+  }
+
+  .titleSpan {
+    display: none;
+  }
+
+  .heroText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h1 {
+      font-size: 3.5em;
+    }
+    h2 {
+      font-size: 1.3em;
+    }
+    p {
+      width: 300px;
+      text-align: center;
+    }
+  }
+
+  .contactDiv {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contactTextDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contactTextDiv p {
+    width: 100%;
+  }
+  
+  .contactButton {
+    width: 25px;
+    height: 25px;
+    padding: 20px;
+  }
+
+  .contactImageDiv{
+    display: none;
+  }
+
+  .textSect {
+    padding: 80px;
+  }
+
+  .textSect .text {
+    width: 350px;
+    p {
+      font-size: 0.9em;
+    }
+  }
+}
+
