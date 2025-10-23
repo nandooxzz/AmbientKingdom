@@ -27,7 +27,7 @@ export default function RadarHomePage({img,url,artist,title,altText}: RadarProps
 
     return (
         <div className={`p-[25px] bg-zinc-900 rounded-[15px] shadow-2xl`}>
-            <h1 className={`${leaguespartan.className} uppercase text-center font-bold text-[1.5em] border-b-[1px]`}>Latest Track</h1><br />
+            <h1 className={`${leaguespartan.className} uppercase text-center font-bold text-[1.5em] border-b-[1px]`}>Latest Tracks</h1><br />
             {(()=> {
               if (img?.url) {
                 return <Image src={img?.url} height={300} width={300} alt={`${altText}`} className="rounded-[10px]"/>
@@ -35,9 +35,9 @@ export default function RadarHomePage({img,url,artist,title,altText}: RadarProps
                 return <Image src={`/ak-logo.jpg`} height={300} width={300} alt={`${altText}`} className="rounded-[10px]"/>
               }
             })()}
-            <div className="flex justify-between mt-2 text-[1em]">
-                <h1 className={`${leaguespartan.className} font-semibold`}>{title}</h1>
-                <h2 className={`${poppins.className} text-purple-400 cursor-pointer`}>{artist?.map((a) => {
+            <div className="mt-2 text-[1em] text-center">
+                <h1 className={`${leaguespartan.className} font-semibold max-w-full`}>{title}</h1>
+                <h2 className={`${poppins.className} text-purple-400 cursor-pointer max-w-[300px] left-0`}>{artist?.map((a) => {
                     return artist.indexOf(a) == (artist.length - 1) ?
                     <Link href={a?.external_urls.spotify} target="_blank" key={a?.name} className="hover:text-purple-300">{a?.name}</Link>
                     :

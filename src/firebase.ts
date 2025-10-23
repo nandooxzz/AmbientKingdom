@@ -14,5 +14,6 @@ const fbInit = {
 const app = initializeApp(fbInit)
 const db = getFirestore(app)
 const artistsCollection = collection(db, 'artists')
+const marketplaceCollection = collection(db, 'marketplace')
 
-export {app,db,artistsCollection}
+export {app,db,artistsCollection, marketplaceCollection}

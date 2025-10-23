@@ -7,12 +7,14 @@ import {SpotifyTrack} from "@/types";
 import { artistsCollection } from "@/firebase";
 import { DocumentData, getDocs } from "firebase/firestore";
 import ArtistCarousel from "@/components/artistCarousel";
+import { Carousel,CarouselContent,CarouselItem,CarouselNext,CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay"
 
 import {leaguespartan, poppins, exo} from "@/fonts"
 
 export default function Home() {
   const [followers, setFollow] = useState({href: null, total: 0})
-  const [radarTrack,setRadarTrack] = useState<SpotifyTrack>()
+  const [radarTrack,setRadarTrack] = useState<SpotifyTrack[]>()
   const [artists, setArtists] = useState<DocumentData[]>()
 
   const getAccessToken = async () => {
@@ -39,7 +41,8 @@ export default function Home() {
       const {tracks} = json as {tracks: {items:Array<{track:SpotifyTrack}>}}
 
       setFollow(followers)
-      setRadarTrack(tracks.items[0].track)
+      const goTracks = [tracks.items[0].track, tracks.items[1].track, tracks.items[2].track, tracks.items[3].track, tracks.items[4].track, tracks.items[5].track, tracks.items[6].track, tracks.items[7].track,]
+      setRadarTrack(goTracks)
     })
   }
 
@@ -64,8 +67,21 @@ export default function Home() {
             <h2 className={`text-white ${leaguespartan.className} font-bold text-[1.5em]`}><span className="heroSpanTag">{followers?.total}</span> currently following <Link href={'https://open.spotify.com/playlist/5ggjTZJy8Xslwaotixt82V?si=P7nCsFr6TsaAqwRwtuM8UA'} className="cursor-pointer" target="_blank"><span className="text-white hover: hover:text-purple-800 underline">us.</span></Link></h2>
           </div>
         </div>
-        <div className="relative w-[100%] flex justify-center items-center heroRadar">
-          <RadarHomePage img={radarTrack?.album.images[0]} title={radarTrack?.name} artist={radarTrack?.artists} url={radarTrack?.external_urls[0]} altText={radarTrack?.name}/>
+        <div className="relative w-[100%] flex justify-center items-center heroRadar ">
+          <Carousel className="w-[40%] p-4 heroCarousel"
+            plugins={[
+                            Autoplay({
+                                delay: 5000
+                            })
+                        ]}>
+            <CarouselContent className="items-center justify-between p-2">
+              {radarTrack?.map((track) => {
+                return <CarouselItem key={track?.name} className=""><RadarHomePage img={track?.album.images[0]} title={track?.name} artist={track?.artists} url={track?.external_urls[0]} altText={track?.name}/></CarouselItem>
+              })}
+            </CarouselContent>
+            <CarouselPrevious className="text-black heroPrevious"/>
+            <CarouselNext className="text-black heroNext"/>
+          </Carousel>
         </div>
       </section>
 

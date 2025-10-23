@@ -178,6 +178,10 @@ img {
   .heroRadar {
     top: 50px;
   }
+
+  .heroCarousel {
+    width: 40%;
+  }
 }
 
 /* Mobile */
@@ -208,6 +212,18 @@ img {
     }
   }
 
+  .heroCarousel {
+    width: 80%;
+  }
+
+  .heroPrevious {
+    margin-left: 20px;
+  }
+
+  .heroNext {
+    margin-right: 20px;
+  }
+  
   .contactDiv {
     flex-direction: column;
     text-align: center;
@@ -243,5 +259,14 @@ img {
       font-size: 0.9em;
     }
   }
+
+  .marketplace {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .mktTxt {
+      text-align: center;
+    }
 }
 
