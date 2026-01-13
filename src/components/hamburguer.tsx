@@ -8,9 +8,9 @@ export default function Hamburguer() {
                 <NavigationMenuList className="flex-wrap">
                     <NavigationMenuItem>
                         <NavigationMenuTrigger><FaBars className="text-[1.5em]"/></NavigationMenuTrigger>
-                        <NavigationMenuContent className="h-full">
-                            <div className="flex flex-col h-full">
-                                <NavigationMenuLink asChild className="m-1">
+                        <NavigationMenuContent>
+                            <div className="flex flex-col p-1">
+                                <NavigationMenuLink asChild className="m-2 ">
                                     <Link href="/awards" className="text-[.6em]">Awards 2025</Link>
                                 </NavigationMenuLink>
 
