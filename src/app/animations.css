@@ -33,11 +33,11 @@
 
 ::-webkit-scrollbar {
     width: 12px;
-    background-color: #18181b;
+    background-color: #fff;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #8035e2;
-    border: 1px solid rgba(0, 0, 0, 0.199);
+    border: 1px solid #fff;
     border-radius: 10px;
 }
