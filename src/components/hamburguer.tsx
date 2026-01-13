@@ -11,7 +11,7 @@ export default function Hamburguer() {
                         <NavigationMenuContent>
                             <div className="flex flex-col">
                                 <NavigationMenuLink asChild className="m-1">
-                                    <Link href="/v2" className="text-[.6em]">Awards 2026</Link>
+                                    <Link href="/awards" className="text-[.6em]">Awards 2025</Link>
                                 </NavigationMenuLink>
 
                                 <NavigationMenuLink asChild className="m-1">
