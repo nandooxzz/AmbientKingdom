@@ -209,9 +209,7 @@ img {
     width: 40%;
   }
   
-  .newsDialog {
-    font-size: small;
-  }
+
 }
 
 /* Mobile */
@@ -265,6 +263,23 @@ img {
 
   .newsTxtarea {
     width: 100%;
+  }
+
+    .newsDialog {
+    font-size: smaller;
+    width: 90%;
+  }
+
+  .newsDialog img {
+    width: 100px;
+  }
+
+  .newsDialog p {
+    font-size: .9em;
+    overflow-y: auto;
+  }
+  .newsDialog h2 {
+    font-size: 1em;
   }
 
   .titleSpan {
