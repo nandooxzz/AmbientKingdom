@@ -1,5 +1,6 @@
 import {initializeApp} from "firebase/app"
 import {getFirestore, collection} from "firebase/firestore"
+import {getAuth} from "firebase/auth"
 
 const fbInit = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,7 +14,9 @@ const fbInit = {
 
 const app = initializeApp(fbInit)
 const db = getFirestore(app)
+const auth = getAuth(app)
 const artistsCollection = collection(db, 'artists')
 const marketplaceCollection = collection(db, 'marketplace')
+const newsCollection = collection(db, 'news')
 
-export {app,db,artistsCollection, marketplaceCollection}
+export {app,db,auth,artistsCollection, marketplaceCollection, newsCollection}

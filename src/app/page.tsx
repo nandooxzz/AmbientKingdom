@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect,useState } from "react";
 import RadarHomePage from "@/components/radarHomePage";
 import {SpotifyTrack} from "@/types";
@@ -10,7 +11,7 @@ import ArtistCarousel from "@/components/artistCarousel";
 import { Carousel,CarouselContent,CarouselItem,CarouselNext,CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay"
 
-import {leaguespartan, poppins, exo} from "@/fonts"
+import {leaguespartan, poppins, exo,roboto} from "@/fonts"
 
 export default function Home() {
   const [followers, setFollow] = useState({href: null, total: 0})
@@ -59,12 +60,24 @@ export default function Home() {
 
   return (
     <section className="w-full flex flex-col select-none">  
+      {/* awards div! */}
+      <br />
+      <Link href={`/awards`}>
+        <div className="w-full flex justify-around items-center min-h-[15vh] bg-purple-600 rounded-sm text-white text-center aahmSection hover:bg-purple-700">
+          <Image src={'/aa2-black.png'} width={175.75} height={101.75} alt="Ambient Awards 2026 Logo" className="invert-[100%] aahmLogo"/>
+          <h2>AA 2026 is already here! Click on this section to start voting</h2>
+        </div>
+      </Link>
+
+      <br /><br />
+
       <section className="w-full h-[750px] hero grid grid-cols-2 overflow-hidden">
+
         <div className="flex justify-center items-center flex-col text-left heroText">
           <div>
             <h1 className={`text-purple-50 font-bold text-[4.5em] leading-[0.9em] ${leaguespartan.className}`}>We are <br/><span className="text-[1.4em] heroSpan text-purple-000">Ambient<br/>Kingdom.</span></h1><br />
-            <p className={`${poppins.className} text-white`}>Creators, soldiers and mainteiners of <span className="heroSpanTag">ambient trap.</span></p>
-            <h2 className={`text-white ${leaguespartan.className} font-bold text-[1.5em]`}><span className="heroSpanTag">{followers?.total}</span> currently following <Link href={'https://open.spotify.com/playlist/5ggjTZJy8Xslwaotixt82V?si=P7nCsFr6TsaAqwRwtuM8UA'} className="cursor-pointer" target="_blank"><span className="text-white hover: hover:text-purple-800 underline">us.</span></Link></h2>
+            <p className={`${roboto.className} text-white`}>Creators, soldiers and mainteiners of <span className="heroSpanTag">ambient trap.</span></p>
+            <h2 className={`text-white ${roboto.className} font-bold text-[1.5em]`}><span className="heroSpanTag">{followers?.total}</span> currently following <Link href={'https://open.spotify.com/playlist/5ggjTZJy8Xslwaotixt82V?si=P7nCsFr6TsaAqwRwtuM8UA'} className="cursor-pointer" target="_blank"><span className="text-white hover: hover:text-purple-800 underline">us.</span></Link></h2>
           </div>
         </div>
         <div className="relative w-[100%] flex justify-center items-center heroRadar ">
@@ -76,11 +89,11 @@ export default function Home() {
                         ]}>
             <CarouselContent className="items-center justify-between p-2">
               {radarTrack?.map((track) => {
-                return <CarouselItem key={track?.name} className=""><RadarHomePage img={track?.album.images[0]} title={track?.name} artist={track?.artists} url={track?.external_urls[0]} altText={track?.name}/></CarouselItem>
+                return <CarouselItem key={track?.name} className=""><RadarHomePage img={track?.album.images[0]} title={track?.name} artist={track?.artists} external_url={track?.external_urls?.spotify} altText={track?.name}/></CarouselItem>
               })}
             </CarouselContent>
-            <CarouselPrevious className="text-black heroPrevious"/>
-            <CarouselNext className="text-black heroNext"/>
+            <CarouselPrevious className="text-black heroPrevious cursor-pointer"/>
+            <CarouselNext className="text-black heroNext cursor-pointer"/>
           </Carousel>
         </div>
       </section>
@@ -90,7 +103,7 @@ export default function Home() {
           <p className={`${exo.className} font-normal text-[1.1em]`}>We are a community of producers, vanguards of <span className="text-purple-800">ambient trap/rap</span>, subgenre already started by prod. Adrian and ADTurnUp, guided by <span className="text-purple-800">us</span>.
             You&apos;ll also find here <span className="text-purple-800">house, lo-fi, DnB</span> & a lot more...
             <br/><br/>
-            <Link href={"https://open.spotify.com/user/31unruzqwj6luxxkl7qi6s253c5y?si=554909d9f4aa41ae"} target="_blank"><span className="text-purple-800 hover:underline">Click here</span></Link> to see all of our Spotify playlists.
+            <Link href={"https://open.spotify.com/user/31unruzqwj6luxxkl7qi6s253c5y?si=554909d9f4aa41ae"} target="_blank"><span className="text-purple-800 hover:underline underline  ">Click here</span></Link> to see all of our Spotify playlists.
           </p>
         </div><br /><br />
         <div className="flex justify-center items-center flex-col w-full">

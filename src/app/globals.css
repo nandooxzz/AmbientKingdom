@@ -6,7 +6,7 @@
 
 
 * {
-  transition: all .15s;
+  transition: all .25s;
 }
 
 body {
@@ -78,12 +78,33 @@ body {
   }
 }
 
+/* awards page (Delete later) */
+
+.awardsLogo {
+  animation-name: awardslogo;
+  animation-duration: 3s;
+  user-select: none;
+}
+
+.awardsSection{
+  animation-name: awardslogo;
+  animation-duration: 3s;
+}
+
+/* */
+
+
 .menuLink {
   margin: 5px;
 }
 
 .menuLink:hover {
   color: #a855f7;
+}
+
+.hamburguer {
+  font-size: 1.5em;
+  display: none;
 }
 
 .hero {
@@ -127,9 +148,9 @@ img {
 }
 
 .socialsButton { 
-  width: 25px;
-  height: 25px;
-  padding: 20px;
+  width: 20px;
+  height: 20px;
+  padding: 15px;
   margin: 2px;
   background:none;
   border: 1px solid black;
@@ -161,7 +182,12 @@ img {
 /* RESPONSIVE */
 
 /* Tablet to Mobile */
-@media(max-width: 1090px) {
+@media(max-width: 1480px) {
+  .layoutContainer {
+    padding-left: 5vh;
+    padding-right: 5vh;
+  }
+
   .hero {
     display: flex;
     flex-direction: column;
@@ -182,13 +208,63 @@ img {
   .heroCarousel {
     width: 40%;
   }
+  
+  .newsDialog {
+    font-size: small;
+  }
 }
 
 /* Mobile */
 
-@media(max-width: 549px) {
+@media(max-width: 900px) {
+  .layoutContainer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .hamburguer {
+    display: block;
+  }
+
   .menu {
     font-size: .9em;
+  }
+
+  .aahmSection {
+    border-radius: 0;
+    font-size: .8em;
+  }
+
+  .aahmLogo {
+    width: 131.8125px;
+    height: 76.3125px;
+  }
+  
+  .awardsSection {
+    margin-top: 1vh;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .awardsLogo {
+    margin-top: 50px;
+  }
+
+  .awardsText {
+    width: 80%;
+  }
+
+  .newsContent {
+    flex-direction: column;
+  }
+
+  .newsTxtarea {
+    width: 100%;
   }
 
   .titleSpan {

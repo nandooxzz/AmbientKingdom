@@ -4,6 +4,9 @@ import MarketPlaceItem from "@/components/marketplaceItem"
 import {app,db,marketplaceCollection} from "@/firebase"
 import { useState, useEffect } from "react"
 import { DocumentData, getDocs } from "firebase/firestore"
+import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty"
+import Link from "next/link"
+import { FaShop } from "react-icons/fa6"
 
 
 export default function MarketPlacePage() {
@@ -12,7 +15,6 @@ export default function MarketPlacePage() {
     const getMarketplace = async () => {
         const snapshots = await getDocs(marketplaceCollection)
         const docs = snapshots.docs.map((doc) => doc.data())
-        console.log(docs)
         setMkp(docs)
     }
 
@@ -21,13 +23,24 @@ export default function MarketPlacePage() {
     },[])
 
     return (
-        <section className="min-h-[90vh] flex flex-col justify-center items-center text-centert text-black">
-            <h1 className={`${poppins.className} max-sm:text-[3em] text-[5em] font-[600]`}>Marketplace</h1><br />
+        <section className="min-h-[50vh] flex flex-col justify-center items-center text-centert text-black">
+            {/* <h1 className={`${poppins.className} max-sm:text-[3em] text-[5em] font-[600]`}>Marketplace</h1><br /> */}
             <div className="w-full flex justify-between items-center pl-[10%] pr-[10%]">
                 {
                     marketplace? marketplace.map((item) => {
                         return <MarketPlaceItem author={item?.author} description={item?.description} download={item?.download} img={item?.img} name={item?.name} id={item?.id} key={item?.name} price={item?.price}/>
-                    }) : "No items found"
+                    }) :
+                        <Empty>
+                            <EmptyHeader>
+                                <EmptyMedia variant="icon">
+                                    <FaShop/>
+                                </EmptyMedia>
+                                <EmptyTitle>No Items Yet</EmptyTitle>
+                                <EmptyDescription>
+                                    There's no items available. <span className="underline hover:text-purple-600"><Link href={`/`}>Click here to go to home page.</Link></span>
+                                </EmptyDescription>
+                            </EmptyHeader>
+                        </Empty>
                 }
             </div>
         </section>

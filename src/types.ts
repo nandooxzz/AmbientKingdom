@@ -8,7 +8,7 @@ interface SpotifyTrack {
             }
         ]
     }
-    external_urls: Array<{spotify: string}>,
+    external_urls: {spotify: string},
     name: string,
     artists: Array<{ external_urls: {spotify: string}, id: string, name: string }>,
     duration_ms: number

@@ -17,6 +17,20 @@
     100% {left: 0}
 }
 
+@keyframes awardslogo {
+    0% {
+        opacity: 0;
+    }
+    
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        
+    }
+}
+
 ::-webkit-scrollbar {
     width: 12px;
     background-color: #18181b;

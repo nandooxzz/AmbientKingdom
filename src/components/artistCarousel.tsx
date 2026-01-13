@@ -31,7 +31,7 @@ export default function ArtistCarousel({artists}: ACProps) {
                             <CarouselItem className="basis-1/3 max-[1669px]:basis-1/2 max-[1190px]:basis-full" key={doc?.name}>
                                 <Card key={doc?.name} className="m-3 select-none border-black w-full">
                                     <CardContent className="p-5">
-                                        {doc?.img ? <Image src={`${doc?.img}`} width={200} height={200} alt={`${doc?.name}`} className="rounded-md w-full h-full"/> : <Image src={`/ak-logo.jpg`} fill={true} alt={`${doc?.name}`} className="rounded-md"/>}
+                                        <Image src={doc?.img? `${doc?.img}` : `/ak-logo.jpg`} width={200} height={200} alt={`${doc?.name}`} className="rounded-md w-full h-full"/>
                                     </CardContent>
                                     <CardFooter className={`flex flex-col ${exo.className}`}>
                                         <h2 className={`font-semibold text-[1.3em]`}>{doc?.name}</h2>
