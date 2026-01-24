@@ -17,7 +17,7 @@
 </div>
 <br/>
 
-- website made by **nandooxz** [(@prod.nandooxz)](instagram.com/prod.nandooxz/)
+- website made by **nandooxz** [(@prod.nandooxz)](https://instagram.com/prod.nandooxz/)
 - funded in 2024
 
 <img src="https://i.imgur.com/jMxVEZI.png" width=128/>
