@@ -62,11 +62,13 @@ export default function homeV2() {
                         <AccordionTrigger>For our producers</AccordionTrigger>
                         <AccordionContent>
                             <p>
-                                <b>If you want to send your songs to us,</b> be sure to be on our <span className="text-blue-600 hover:text-blue-700 underline"><Link href={'/contact'}>Discord</Link></span><br/>
+                                {/* <b>If you want to send your songs to us,</b> be sure to be on our <span className="text-blue-600 hover:text-blue-700 underline"><Link href={'/contact'}>Discord</Link></span><br/>
                                 Any producer who registers and <b>is not on our Discord will be disqualified.</b><br/>
-                                Please, fill up the form below:
+                                Please, fill up the form below: */}
+                                The subscription form <b>has been already closed!</b>
                             </p><br/>
-                            <Link href={`https://forms.gle/qRR6XP2tqqaUk3HL9`} target="_blank"><Button variant={"secondary"}>SUBSCRIPTION FORM</Button></Link>
+                            {/* <Link href={`https://forms.gle/qRR6XP2tqqaUk3HL9`} target="_blank"><Button variant={"ghost"} disabled>SUBSCRIPTION FORM</Button></Link> */}
+                            <Button variant={"ghost"} disabled>SUBSCRIPTION FORM</Button>
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>
